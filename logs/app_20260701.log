@@ -1,0 +1,25 @@
+2026-07-01 17:10:09.736 | INFO     | node_pdf_to_md.py   :<module>       :316  - ===== 开始node_pdf_to_md节点单元测试 =====
+2026-07-01 17:10:09.877 | INFO     | node_pdf_to_md.py   :<module>       :321  - 测试获取根地址：D:\my_agent_pro\knowledge_base_qa_bot
+2026-07-01 17:10:09.879 | ERROR    | node_pdf_to_md.py   :node_pdf_to_md :303  - 【node_pdf_to_md】PDF转MD流程执行失败：[step1_validate_paths]PDF文件不存在，绝对路径：D:\my_agent_pro\knowledge_base_qa_bot\doc\hak180产品安全手册.pdf
+2026-07-01 17:10:48.594 | INFO     | node_pdf_to_md.py   :<module>       :316  - ===== 开始node_pdf_to_md节点单元测试 =====
+2026-07-01 17:10:48.655 | INFO     | node_pdf_to_md.py   :<module>       :321  - 测试获取根地址：D:\my_agent_pro\knowledge_base_qa_bot
+2026-07-01 17:10:48.656 | INFO     | node_pdf_to_md.py   :step1_validate_paths:47   - [step1_validate_paths]输出目录不存在，自动创建目录：D:\my_agent_pro\knowledge_base_qa_bot\output
+2026-07-01 17:10:48.657 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:64   - [step2_upload_and_poll]MinerU配置正常，开始处理文件：hak180产品安全手册.pdf
+2026-07-01 17:16:24.734 | INFO     | node_pdf_to_md.py   :<module>       :316  - ===== 开始node_pdf_to_md节点单元测试 =====
+2026-07-01 17:16:24.791 | INFO     | node_pdf_to_md.py   :<module>       :321  - 测试获取根地址：D:\my_agent_pro\knowledge_base_qa_bot
+2026-07-01 17:16:24.792 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:64   - [step2_upload_and_poll]MinerU配置正常，开始处理文件：hak180产品安全手册.pdf
+2026-07-01 17:23:21.959 | INFO     | node_pdf_to_md.py   :<module>       :316  - ===== 开始node_pdf_to_md节点单元测试 =====
+2026-07-01 17:23:22.021 | INFO     | node_pdf_to_md.py   :<module>       :321  - 测试获取根地址：D:\my_agent_pro\knowledge_base_qa_bot
+2026-07-01 17:23:22.022 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:64   - [step2_upload_and_poll]MinerU配置正常，开始处理文件：hak180产品安全手册.pdf
+2026-07-01 17:23:22.434 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:92   - [step2_upload_and_poll]获取上传链接成功，上传链接：https://mineru.oss-cn-shanghai.aliyuncs.com/api-upload/extract/2026-07-01/aad86de0-1f8c-4229-8135-6f0b6996c646/f665a7b4-2a66-4791-ab55-33e59d06dc28.pdf?Expires=1782984203&OSSAccessKeyId=LTAI5t8fSGMgiRhQn4mpp926&Signature=26TQlUVv85%2Fk7qqQUXhsMAgqRAQ%3D, 任务batch_id：aad86de0-1f8c-4229-8135-6f0b6996c646
+2026-07-01 17:23:22.437 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:95   - [step2_upload_and_poll]开始上传文件：hak180产品安全手册.pdf
+2026-07-01 17:23:22.976 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:110  - [step2_upload_and_poll]文件上传成功，文件hak180产品安全手册.pdf已存入云存储
+2026-07-01 17:23:22.978 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:122  - [step2_upload_and_poll]开始轮询任务状态，任务batch_id：aad86de0-1f8c-4229-8135-6f0b6996c646, 最大超时：600秒
+2026-07-01 17:23:23.143 | ERROR    | node_pdf_to_md.py   :node_pdf_to_md :303  - 【node_pdf_to_md】PDF转MD流程执行失败：'extract_results'
+2026-07-01 17:24:53.929 | INFO     | node_pdf_to_md.py   :<module>       :318  - ===== 开始node_pdf_to_md节点单元测试 =====
+2026-07-01 17:24:53.993 | INFO     | node_pdf_to_md.py   :<module>       :323  - 测试获取根地址：D:\my_agent_pro\knowledge_base_qa_bot
+2026-07-01 17:24:53.993 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:64   - [step2_upload_and_poll]MinerU配置正常，开始处理文件：hak180产品安全手册.pdf
+2026-07-01 17:24:54.300 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:92   - [step2_upload_and_poll]获取上传链接成功，上传链接：https://mineru.oss-cn-shanghai.aliyuncs.com/api-upload/extract/2026-07-01/6315affd-9978-4d2c-9b11-2339b3a8f1e8/c148ee05-49d0-4065-abbb-33fdf8fc265d.pdf?Expires=1782984295&OSSAccessKeyId=LTAI5t8fSGMgiRhQn4mpp926&Signature=OgH4chJcU9jcEGUzO5NhZOPg2Vs%3D, 任务batch_id：6315affd-9978-4d2c-9b11-2339b3a8f1e8
+2026-07-01 17:24:54.302 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:95   - [step2_upload_and_poll]开始上传文件：hak180产品安全手册.pdf
+2026-07-01 17:24:54.991 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:110  - [step2_upload_and_poll]文件上传成功，文件hak180产品安全手册.pdf已存入云存储
+2026-07-01 17:24:54.994 | INFO     | node_pdf_to_md.py   :step2_upload_and_poll:122  - [step2_upload_and_poll]开始轮询任务状态，任务batch_id：6315affd-9978-4d2c-9b11-2339b3a8f1e8, 最大超时：600秒
