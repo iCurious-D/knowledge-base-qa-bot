@@ -15,6 +15,7 @@ class MinIOConfig:
     secret_key: str     # MinIO秘钥（对应MINIO_SECRET_KEY）
     bucket_name: str    # MinIO默认存储桶名（知识库文件专用）
     minio_img_dir: str  # Minio存储图片的文件夹
+    minio_secure: bool = False  # 是否使用HTTPS连接
 
 
 # 实例化MinIO配置对象，自动从.env读取配置并绑定
@@ -23,5 +24,6 @@ minio_config = MinIOConfig(
     access_key=os.getenv("MINIO_ACCESS_KEY"),
     secret_key=os.getenv("MINIO_SECRET_KEY"),
     bucket_name=os.getenv("MINIO_BUCKET_NAME"),
-    minio_img_dir=os.getenv("MINIO_IMG_DIR")
+    minio_img_dir=os.getenv("MINIO_IMG_DIR"),
+minio_secure=os.getenv("MINIO_SECURE", "false").lower() == "true"
 )

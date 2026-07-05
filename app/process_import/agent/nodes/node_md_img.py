@@ -273,12 +273,26 @@ def upload_to_minio(minio_client: Minio, local_path: str, object_name: str) -> s
 
         # 处理路径特殊字符，避免URL解析错误
         object_name = object_name.replace("\\", "%5C")
-        # 根据配置选择HTTP/HTTPS协议
-        protocol = "https" if minio_config.minio_secure else "http"
-        # 构造MinIO基础访问URL
-        base_url = f"{protocol}://{minio_config.endpoint}/{minio_config.bucket_name}"
-        # 拼接完整图片访问URL base_url 后面带 / 中间直接两个字符串拼接即可
-        img_url = f"{base_url}{object_name}"
+
+        # # 根据配置选择HTTP/HTTPS协议
+        # protocol = "https" if minio_config.minio_secure else "http"
+        # # 构造MinIO基础访问URL
+        # 重复拼接了http
+        # base_url = f"{protocol}://{minio_config.endpoint}/{minio_config.bucket_name}"
+        # # 拼接完整图片访问URL base_url 后面带 / 中间直接两个字符串拼接即可
+        # img_url = f"{base_url}{object_name}"
+        # logger.info(f"图片上传成功，访问URL：{img_url}")
+        # return img_url
+
+        # 构造MinIO访问URL（兼容endpoint已包含协议的情况）
+        endpoint = minio_config.endpoint
+        # 如果endpoint已包含协议，直接使用；否则根据配置添加
+        if not endpoint.startswith("http://") and not endpoint.startswith("https://"):
+            protocol = "https" if minio_config.minio_secure else "http"
+            endpoint = f"{protocol}://{endpoint}"
+
+        # 拼接完整图片访问URL
+        img_url = f"{endpoint}/{minio_config.bucket_name}/{object_name}"
         logger.info(f"图片上传成功，访问URL：{img_url}")
         return img_url
 
@@ -450,7 +464,7 @@ def node_md_img(state: ImportGraphState) -> ImportGraphState:
     # 步骤5：备份原MD文件，保存处理后的新MD文件并更新状态
     new_md_file_name = step5_backup_new_md_file(state['md_path'], new_md_content)
     state["md_path"] = new_md_file_name
-    logger.info(f"已保存处理后的MD文件：{new_md_file_name.absolute()}")
+    logger.info(f"已保存处理后的MD文件：{new_md_file_name}")
 
     # 结束：记录节点运行状态
     add_done_task(state["task_id"], func_name)

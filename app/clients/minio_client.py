@@ -13,12 +13,30 @@ minio_client = None
 
 try:
     # 初始化MinIO客户端实例
+    # 处理endpoint格式：去掉http://或https://前缀（新版SDK要求）
+    endpoint = minio_config.endpoint
+    if endpoint.startswith("http://"):
+        endpoint = endpoint.replace("http://", "")
+        secure = False
+    elif endpoint.startswith("https://"):
+        endpoint = endpoint.replace("https://", "")
+        secure = True
+    else:
+        secure = minio_config.minio_secure if hasattr(minio_config, 'minio_secure') else False
+
     minio_client = Minio(
-        endpoint=minio_config.endpoint,
+        endpoint=endpoint,
         access_key=minio_config.access_key,
         secret_key=minio_config.secret_key,
-        secure=False  # 内网/本地部署用HTTP，公网部署需改为True并配置SSL
+        secure=secure
     )
+    # # 初始化MinIO客户端实例
+    # minio_client = Minio(
+    #     endpoint=minio_config.endpoint,
+    #     access_key=minio_config.access_key,
+    #     secret_key=minio_config.secret_key,
+    #     secure=False  # 内网/本地部署用HTTP，公网部署需改为True并配置SSL
+    # )
     # 检查存储桶是否存在，不存在则自动创建
     bucket_name = minio_config.bucket_name
     if not minio_client.bucket_exists(bucket_name):
